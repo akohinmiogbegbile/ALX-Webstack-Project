@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "763019420468",
+    "project_id": "fooddeliveryapp-c07db",
+    "storage_bucket": "fooddeliveryapp-c07db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763019420468:android:0aad4c95f8df590014bb61",
+        "android_client_info": {
+          "package_name": "com.example.tilomathmarketplace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFKZPrqtOKBWDqF_Js54967qQZSrYCfn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
