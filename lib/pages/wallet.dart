@@ -28,7 +28,11 @@ class _WalletState extends State<Wallet> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 30.0,
+            ),
             Container(
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Color(0xFFF2F2F2)),
               child: Row(
@@ -38,6 +42,17 @@ class _WalletState extends State<Wallet> {
                     height: 60,
                     width: 60,
                     fit: BoxFit.cover,
+                  ),
+                  SizedBox(
+                    width: 40.0,
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        "Your Wallet",
+                        style: AppWidget.semiboldTextFieldStyle(),
+                      )
+                    ],
                   )
                 ],
               ),
