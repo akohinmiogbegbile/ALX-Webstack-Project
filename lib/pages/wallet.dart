@@ -15,6 +15,7 @@ class _WalletState extends State<Wallet> {
       body: Container(
         margin: EdgeInsets.only(top: 50.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Material(
               elevation: 2.0,
@@ -47,15 +48,101 @@ class _WalletState extends State<Wallet> {
                     width: 40.0,
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "Your Wallet",
                         style: AppWidget.semiboldTextFieldStyle(),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      Text(
+                        "\$100",
+                        style: AppWidget.boldTextFieldStyle(),
                       )
                     ],
-                  )
+                  ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Text(
+                "Add Money",
+                style: AppWidget.semiboldTextFieldStyle(),
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xFFE9E2E2)),
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Text(
+                    "\$100",
+                    style: AppWidget.semiboldTextFieldStyle(),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xFFE9E2E2)),
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Text(
+                    "\$500",
+                    style: AppWidget.semiboldTextFieldStyle(),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xFFE9E2E2)),
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Text(
+                    "\$1000",
+                    style: AppWidget.semiboldTextFieldStyle(),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xFFE9E2E2)),
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Text(
+                    "\$2000",
+                    style: AppWidget.semiboldTextFieldStyle(),
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 50.0,
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(vertical: 12.0),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  color: Color(0xFF008080),
+                  borderRadius: BorderRadius.circular(8)),
+              child: Center(
+                  child: Text(
+                "Add Funds",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 17.0,
+                    fontFamily: "Poppins",
+                    fontWeight: FontWeight.bold),
+              )),
             )
           ],
         ),
