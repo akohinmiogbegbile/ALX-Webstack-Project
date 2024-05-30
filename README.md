@@ -1,4 +1,4 @@
-# Food Delivery App
+# Tilomath Eats
 
 Welcome to the development repository of our Food Delivery App! This app is built using Flutter for the front end, Firebase for the backend, and integrates Stripe as the payment gateway.
 
