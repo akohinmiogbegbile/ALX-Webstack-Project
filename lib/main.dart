@@ -6,6 +6,7 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:tilomathmarketplace/admin/home_admin.dart';
 import 'package:tilomathmarketplace/pages/bottomnav.dart';
 import 'package:tilomathmarketplace/pages/login.dart';
+import 'package:tilomathmarketplace/pages/onboard.dart';
 import 'package:tilomathmarketplace/pages/wallet.dart';
 import 'package:tilomathmarketplace/widgets/app_constant.dart';
 
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         // ignore: prefer_const_constructors
-        home: BottomNav());
+        home: Onboard());
   }
 }
 

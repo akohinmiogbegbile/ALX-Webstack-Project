@@ -1,7 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:random_string/random_string.dart';
 import 'package:tilomathmarketplace/pages/bottomnav.dart';
 import 'package:tilomathmarketplace/pages/login.dart';
+import 'package:tilomathmarketplace/service/database.dart';
+import 'package:tilomathmarketplace/service/shared_pref.dart';
 import 'package:tilomathmarketplace/widgets/widget_support.dart';
 
 class SignUp extends StatefulWidget {
@@ -33,10 +36,22 @@ class _SignUpState extends State<SignUp> {
             "Registered Successfully",
             style: TextStyle(fontSize: 20.0),
           ))));
+      String Id = randomAlphaNumeric(10);
+      Map<String, dynamic> addUserInfo = {
+        "Name": namecontroller.text,
+        "Email": mailcontroller.text,
+        "Wallet": "0",
+        "Id": Id,
+      };
+      await DatabaseMethods().addUserDetail(addUserInfo, Id);
+      await SharedPreferenceHelper().saveUserName(namecontroller.text);
+      await SharedPreferenceHelper().saveUserEmail(mailcontroller.text);
+      await SharedPreferenceHelper().saveUserWallet('0');
+      await SharedPreferenceHelper().saveUserId(Id);
 
       // ignore: use_build_context_synchronously
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const BottomNav()));
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const BottomNav()));
     } on FirebaseException catch (e) {
       if (e.code == 'weak-password') {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
@@ -54,7 +69,7 @@ class _SignUpState extends State<SignUp> {
             )));
       }
     }
-    }
+  }
 
   @override
   Widget build(BuildContext context) {

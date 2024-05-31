@@ -8,6 +8,7 @@ class DatabaseMethods {
         .set(userInfoMap);
   }
 
+  // ignore: non_constant_identifier_names
   UpdateUserWallet(String id, String amount) async {
     return await FirebaseFirestore.instance
         .collection('users')
