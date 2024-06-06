@@ -107,7 +107,7 @@ class _SignUpState extends State<SignUp> {
                 children: [
                   Center(
                       child: Image.asset(
-                    "images/logo.png",
+                    "images/logoB.png",
                     width: MediaQuery.of(context).size.width / 1.5,
                     fit: BoxFit.cover,
                   )),

@@ -288,4 +288,39 @@ class _WalletState extends State<Wallet> {
 
     return calculatedAmount.toString();
   }
+
+  Future openEdit() => showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+            content: SingleChildScrollView(
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Icon(Icons.cancel)),
+                        const SizedBox(
+                          width: 60.0,
+                        ),
+                        const Center(
+                          child: Text(
+                            "Add Money",
+                            style: TextStyle(
+                              color: Color(0xFF008080),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ));
 }

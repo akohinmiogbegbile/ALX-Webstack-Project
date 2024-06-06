@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         // ignore: prefer_const_constructors
-        home: Onboard());
+        home: Wallet());
   }
 }
 
