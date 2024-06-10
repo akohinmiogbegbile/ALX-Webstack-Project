@@ -3,10 +3,12 @@ import 'dart:io';
 import "package:firebase_core/firebase_core.dart";
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:tilomathmarketplace/admin/admin_login.dart';
 import 'package:tilomathmarketplace/admin/home_admin.dart';
 import 'package:tilomathmarketplace/pages/bottomnav.dart';
 import 'package:tilomathmarketplace/pages/login.dart';
 import 'package:tilomathmarketplace/pages/onboard.dart';
+import 'package:tilomathmarketplace/pages/order.dart';
 import 'package:tilomathmarketplace/pages/wallet.dart';
 import 'package:tilomathmarketplace/widgets/app_constant.dart';
 
@@ -56,7 +58,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         // ignore: prefer_const_constructors
-        home: Wallet());
+        home: LogIn());
   }
 }
 

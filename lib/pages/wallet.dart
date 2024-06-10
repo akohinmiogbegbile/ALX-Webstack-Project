@@ -18,6 +18,7 @@ class Wallet extends StatefulWidget {
 class _WalletState extends State<Wallet> {
   String? wallet, id;
   int? add;
+  TextEditingController amountcontroller = new TextEditingController();
 
   getthesharedpref() async {
     wallet = await SharedPreferenceHelper().getUserWallet();
@@ -175,22 +176,27 @@ class _WalletState extends State<Wallet> {
                   const SizedBox(
                     height: 50.0,
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20.0),
-                    padding: const EdgeInsets.symmetric(vertical: 12.0),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: const Color(0xFF008080),
-                        borderRadius: BorderRadius.circular(8)),
-                    child: const Center(
-                        child: Text(
-                      "Add Funds",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17.0,
-                          fontFamily: "Poppins",
-                          fontWeight: FontWeight.bold),
-                    )),
+                  GestureDetector(
+                    onTap: () {
+                      openEdit();
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 20.0),
+                      padding: const EdgeInsets.symmetric(vertical: 12.0),
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          color: const Color(0xFF008080),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: const Center(
+                          child: Text(
+                        "Add Funds Manually",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17.0,
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.bold),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -317,6 +323,50 @@ class _WalletState extends State<Wallet> {
                           ),
                         )
                       ],
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    const Text("Amount"),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black38, width: 2.0),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: TextField(
+                        controller: amountcontroller,
+                        decoration: const InputDecoration(
+                            border: InputBorder.none, hintText: "Enter Amount"),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    Center(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          makePayment(amountcontroller.text);
+                        },
+                        child: Container(
+                          width: 100,
+                          padding: const EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF008080),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Pay",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ),
                     )
                   ],
                 ),
