@@ -23,7 +23,7 @@ Welcome to the development repository of our Food Delivery App! This app is buil
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/food-delivery-app.git
+   git clone https://github.com/your-username/tilomathmarketplace.git
    Certainly! Below is a template for your README.md file for a food delivery app developed using Flutter for the front end, Firebase for the backend, and Stripe as the payment gateway. Remember to replace the placeholder information with your actual project details.
    ```
 
