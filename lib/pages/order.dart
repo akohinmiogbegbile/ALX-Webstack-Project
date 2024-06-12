@@ -20,7 +20,6 @@ class _OrderState extends State<Order> {
   void startTimer() {
     Timer(const Duration(seconds: 3), () {
       amount2 = total;
-      setState(() {});
     });
   }
 
